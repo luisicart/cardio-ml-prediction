@@ -94,3 +94,30 @@ pip install -r requirements.txt
 ```bash
 python main.py
 ```
+
+## Dataset
+
+Nomes e conteúdo de variáveis foram substituídos para o português, para que seja mais clara sua interpretabilidade para pessoas leigas no assunto. A versão original pode ser encontrada nos links disponibilizados e o script de transformação na pasta `src`.
+
+**Variáveis:**
+* paciente_id: Identificador único de cada paciente.
+* nr_dias_idade: Idade do paciente em dias.
+* nr_anos_idade: Idade do paciente em anos (derivada da variável "age").
+* desc_genero: Gênero do paciente - Variável categórica (1: Feminino, 2: Masculino).
+* vlr_altura: Altura do paciente em centímetros.
+* vlr_peso: Peso do paciente em kilogramas.
+* vlr_pressao_sistolica: Pressão arterial Sistólica.
+    * A pressão arterial sistólica é o valor mais alto registrado durante a medição da pressão arterial e representa a pressão do sangue nas artérias quando o coração se contrai (sístole). Os valores normais para a pressão sistólica em adultos geralmente variam entre 120 e 129 mmHg, sendo que abaixo de 120 mmHg é considerado ótimo. 
+* vlr_pressão_diastolica: Pressão arterial Diastólica.
+    * Refere-se a pressão do sangue nas artérias quando o coração está em repouso, entre os batimentos, e é o valor inferior da leitura da pressão arterial. É medida em milímetros de mercúrio (mmHg) e é considerada normal entre 60 e 80 mmHg em adultos
+* cat_colesterol: Níveis de Colesterol. Variável categórica (1: Normal, 2: Acima do Normal, 3: Bem Acima do Normal).
+* cat_glicose: Níveis de Glicose no sanguie. Variável categórica (1: Normal, 2: Acima do Normal, 3: Bem Acima do Normal).
+* flag_fumante: Status de Fumante. Variável binária (0: Não fumante, 1: Fumante).
+* flag_consumo_alcool: Ingestão de Álcool. Variável binária (0: Não consome, 1: Consome).
+* flag_atividade_fisica: Atividade física. Variável binária (0: Não pratica, 1: Pratica).
+* vlr_imc: Índice IMC, calculado através do peso e altura. Calculado da seguinte maneira: 
+$$
+IMC = \frac{peso\ (kg)}{altura\ (m)^2}
+$$
+* cat_pressao_arterial: Categorização da pressão arterial, derivado das variáveis ap_hi e ap_lo. Variável categórica ("Normal", "Elevated", "Hypertension Stage 1", "Hypertension Stage 2", and "Hypertensive Crisis").
+* flag_doenca_cardiaca: Presença ou ausência de doença cardíaca. **Variável Target**. Binária (0: Ausência, 1: Presença).
