@@ -103,7 +103,7 @@ Nomes e conteúdo de variáveis foram substituídos para o português, para que 
 * paciente_id: Identificador único de cada paciente.
 * nr_dias_idade: Idade do paciente em dias.
 * nr_anos_idade: Idade do paciente em anos (derivada da variável "age").
-* desc_genero: Gênero do paciente - Variável categórica (1: Feminino, 2: Masculino).
+* cat_genero: Gênero do paciente - Variável categórica (1: Feminino, 2: Masculino).
 * vlr_altura: Altura do paciente em centímetros.
 * vlr_peso: Peso do paciente em kilogramas.
 * vlr_pressao_sistolica: Pressão arterial Sistólica.
