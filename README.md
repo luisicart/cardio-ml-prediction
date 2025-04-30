@@ -14,7 +14,7 @@ Os dados utilizados são uma consolidação de duas bases:
 
 ---
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 A estrutura do projeto visa a modularidade e reprodutibilidade por qualquer pessoa que queira realizar suas previsões sobre esta base de dados ou outras. 
 Portanto, está dividido em pastas que possuem diferentes propósitos que são autoexplicados em seus nomes.
@@ -24,7 +24,7 @@ A pasta `src` é onde estão as principais etapas de análise exploratória, tra
 
 ---
 
-## ⚙️ Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - Python 3.10+
 - Pandas, NumPy
@@ -37,7 +37,7 @@ A pasta `src` é onde estão as principais etapas de análise exploratória, tra
 
 ---
 
-## 🧠 Modelos Implementados
+## Modelos Implementados
 
 - Regressão Logística
 - Decision Tree
@@ -48,7 +48,7 @@ A pasta `src` é onde estão as principais etapas de análise exploratória, tra
 
 ---
 
-## 🧪 Avaliação dos Modelos
+## Avaliação dos Modelos
 
 As seguintes métricas são utilizadas para avaliar a performance dos modelos:
 
@@ -63,7 +63,7 @@ As métricas utilizadas foram selecionadas por fornecerem uma visão abrangente 
 
 ---
 
-## 🔍 Interpretabilidade com SHAP
+## Interpretabilidade com SHAP
 
 A análise de explicabilidade dos modelos é feita com **SHAP (Shapley Additive Explanations)**, permitindo:
 - Visualizar o impacto de cada variável na predição
@@ -74,7 +74,7 @@ O SHAP (Shapley Additive Explanations) foi escolhido por ser um dos métodos mai
 
 ---
 
-## 📈 Como Executar o Projeto
+## Como Executar o Projeto
 
 ### 1. Clone o repositório
 
