@@ -119,3 +119,8 @@ Nomes e conteúdo de variáveis foram substituídos para o português, para que 
     * IMC = peso (kg) \ altura (m)^2
 * cat_pressao_arterial: Categorização da pressão arterial, derivado das variáveis ap_hi e ap_lo. Variável categórica ("Normal", "Elevated", "Hypertension Stage 1", "Hypertension Stage 2", and "Hypertensive Crisis").
 * flag_doenca_cardiaca: Presença ou ausência de doença cardíaca. **Variável Target**. Binária (0: Ausência, 1: Presença).
+
+## Resultados
+
+### Análise Exploratória
+
