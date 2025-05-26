@@ -42,7 +42,7 @@ cat_hipertensao_condicoes = [
     df_raw['cat_pressao_arterial'] == 'Hypertensive Crisis'
 ]
 
-novos_valores_cat_hipertensao = ['hipertensao_nivel_1', 'hipertensao_nivel_2', 'pressao_normal', 'pressao_elevada', 'crise_hipertensiva']
+novos_valores_cat_hipertensao = [ '0.pressao_normal', '1.pressao_elevada', '2.hipertensao_nivel_1', '3.hipertensao_nivel_2', '4.crise_hipertensiva']
 
 df_raw['cat_pressao_arterial'] = np.select(cat_hipertensao_condicoes, novos_valores_cat_hipertensao, default='Checar')
 
@@ -63,7 +63,7 @@ cat_colesterol_condicoes = [
     df_raw['cat_colesterol'] == 2,
     df_raw['cat_colesterol'] == 3
 ]
-novos_valores_cat_colesterol = ['colesterol_normal', 'colesterol_acima_do_normal', 'colesterol_muito_acima_do_normal']
+novos_valores_cat_colesterol = ['0.colesterol_normal', '1.colesterol_acima_do_normal', '2.colesterol_muito_acima_do_normal']
 
 df_raw['cat_colesterol'] = np.select(cat_colesterol_condicoes, novos_valores_cat_colesterol, default='Checar')
 
@@ -74,7 +74,7 @@ cat_glicose_condicoes = [
     df_raw['cat_glicose'] == 2,
     df_raw['cat_glicose'] == 3
 ]
-novos_valores_cat_glicose = ['glicose_normal', 'glicose_acima_do_normal', 'glicose_muito_acima_do_normal']
+novos_valores_cat_glicose = ['0.glicose_normal', '1.glicose_acima_do_normal', '2.glicose_muito_acima_do_normal']
 
 df_raw['cat_glicose'] = np.select(cat_glicose_condicoes, novos_valores_cat_glicose, default='Checar')
 # %%
