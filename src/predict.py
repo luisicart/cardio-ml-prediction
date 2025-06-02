@@ -63,21 +63,10 @@ plt.grid(visible=False)
 plt.tight_layout()
 plt.savefig('../figures/kde_plot_pred_proba.png')
 plt.show()
+
 # %%
 precision, recall, thresholds = metrics.precision_recall_curve(df_processed['flag_doenca_cardiaca'], df_processed['pred_proba'])
 
-plt.figure(figsize=(10,6))
-plt.plot(thresholds, recall[:-1], label='Recall', color='#8ecae6')     
-plt.plot(thresholds, precision[:-1], label='Precision', color='#ffb3b3') 
-plt.xlabel('Threshold')
-plt.ylabel('Score')
-plt.legend()
-plt.grid(visible=False)  
-plt.tight_layout()
-plt.savefig('../figures/precision_recall_curve.png')
-plt.show()
-
-# %%
 df_threshold = pd.DataFrame({
     'precision': precision[:-1],
     'recall': recall[:-1],
@@ -88,6 +77,24 @@ df_threshold_filtered = df_threshold[df_threshold["recall"] <= 0.81]
 best_threshold_metrics = df_threshold_filtered.loc[df_threshold_filtered["recall"].idxmax()]
 
 best_threshold_metrics
+
+# %%
+plt.figure(figsize=(10,6))
+plt.plot(thresholds, recall[:-1], label='Recall', color='#8ecae6')     
+plt.plot(thresholds, precision[:-1], label='Precision', color='#ffb3b3') 
+plt.axvline(
+    x=best_threshold_metrics['thresholds'],
+    color='black',
+    linestyle='--', 
+    label='Threshold Ideal (Recall = 0.81)'
+)
+plt.xlabel('Threshold')
+plt.ylabel('Score')
+plt.legend()
+plt.grid(visible=False)  
+plt.tight_layout()
+plt.savefig('../figures/precision_recall_curve.png')
+plt.show()
 
 # %%
 X_shap = best_model["model"].named_steps['preprocessor'].transform(df_processed[best_model["features"]]) 
