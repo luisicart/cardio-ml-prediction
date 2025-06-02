@@ -104,18 +104,31 @@ cat_table
 
 corr_table = df_processed[num_features + [target]].corr()
 
+# Formatar os números decimais com vírgula
+fmt = lambda x: str(x).replace('.', ',') if isinstance(x, float) else x
+
 mask = np.triu(np.ones_like(corr_table, dtype=bool))
 
 plt.figure(figsize=(10, 8))
-sns.heatmap(
+ax = sns.heatmap(
     corr_table,
     mask=mask,
     vmin=-1,
     vmax=1,
     cmap="RdBu",
     annot=True,
-    annot_kws={"fontsize": 8, "color": "k"}
+    fmt='.2f',
+    annot_kws={"fontsize": 8, "color": "k"},
+    cbar_kws={"format": '%.2f'}
 )
+
+for t in ax.texts:
+    t.set_text(t.get_text().replace('.', ','))
+
+cbar = ax.collections[0].colorbar
+tick_labels = [label.get_text().replace('.', ',') for label in cbar.ax.get_yticklabels()]
+cbar.ax.set_yticklabels(tick_labels)
+
 plt.tight_layout()
 plt.savefig('../figures/correlation_heatmap.png')
 plt.show()
