@@ -80,13 +80,17 @@ best_threshold_metrics
 
 # %%
 plt.figure(figsize=(10,6))
-plt.plot(thresholds, recall[:-1], label='Recall', color='#8ecae6')     
-plt.plot(thresholds, precision[:-1], label='Precision', color='#ffb3b3') 
-plt.axvline(
-    x=best_threshold_metrics['thresholds'],
-    color='black',
-    linestyle='--', 
-    label='Threshold Ideal (Recall = 0.81)'
+plt.plot(thresholds, recall[:-1], label='Recall', color='#8ecae6', zorder=1)     
+plt.plot(thresholds, precision[:-1], label='Precision', color='#ffb3b3', zorder=1) 
+
+plt.scatter(
+    best_threshold_metrics['thresholds'],
+    best_threshold_metrics['recall'],
+    color='#023047',  
+    marker='D',  
+    s=50,
+    label='Threshold Ideal (Recall = 0.81)',
+    zorder=2
 )
 plt.xlabel('Threshold')
 plt.ylabel('Score')
